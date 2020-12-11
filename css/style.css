@@ -1,0 +1,361 @@
+:root {
+    --bg-color: #9BC1BC;
+    --accent-color: #5CA4A9;
+    --main-color: #F4F1BB;
+    --main-title: #E37567;
+    --light-color: #E6EBE0;
+    --dark-color: #363537;
+}
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/clouds-background.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--dark-color);
+    overflow: hidden;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    color: var(--main-title);
+    text-align: center;
+    margin: 20px;
+    font-size: 72px;
+    -webkit-text-stroke: 0.01px var(--main-color);
+    font-style: italic;
+}
+
+h2{
+    color: #F4F1BB;
+}
+
+.rules > h2 {
+    color: var(--dark-color);
+}
+
+#modal {
+	background-color: var(--bg-color);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+    width: 100%;
+	z-index: 1;
+    overflow: auto;
+    display: none;
+    overflow: hidden;
+}
+
+#modal-textbox {
+	background-image: url("../img/clouds-background.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	height: 700px;
+	width: 800px;
+	border-radius: 2px;
+    margin: calc((100vh - 700px)/2) auto;
+    padding: 20px 100px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.rules, .teams {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+}
+
+.teams {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.teamSetUp {
+    height: 160px;
+    width: 200px;
+}
+
+#main {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    height: 60vh;
+    align-items: center; /* align vertically */
+}
+
+#board {
+    order: 2;
+    width: 40vw;
+    height: 50vh;
+    background-color: var(--main-color);
+    display: flex;
+    box-shadow: 5px 10px var(--main-title);
+}
+
+#team1 {
+    order: 1; 
+}
+
+#team2 {
+    order: 3;
+}
+
+#team1, #team2 {
+    border: 2px solid var(--bg-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 25vw;
+    height: 35vh;
+    background-color: var(--accent-color);
+}
+
+.teamScoreBoard {
+    height: 50px;
+    width: 100px;
+    margin: 0 auto;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; 
+}
+
+.pointBoard {
+    height: 80px;
+    width: 200px;
+    /* margin: 0 auto; */
+    background-color: var(--main-title);
+    color: var(--dark-color);
+    font-size: 72px;
+    border: 3px dashed var(--main-color);
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ol {
+    list-style-position: inside;
+}
+
+.strikeBoard {
+    height: 50px;
+}
+
+.strike1, .strike2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 32px;
+    color: var(--bg-color);
+    
+}
+
+.round1, .round2 {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
+}
+
+.round1 {
+    order: 1;
+}
+
+.round2 {
+    order: 3;
+}
+
+.qAnda {
+    order: 2;
+    width: 85%;
+    font-size: 20px;
+    padding: 5px;
+    position: relative;
+}
+
+.round1 h2, .round2 h2{
+    color: var(--dark-color);
+}
+
+.questionBanner {
+    height: 60px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--main-title);
+    color: var(--dark-color);
+    font-size: 18px;
+    border: 3px dashed var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 5px;
+}
+
+#start-round, #closeHelpModal, #closeEndModal, #openStartModal {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--dark-color);
+    background: var(--main-color);
+    padding: 10px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    margin: 10px 0 3px;
+    width: 150px;
+    text-align: center;
+}
+
+#start-round:hover, #closeHelpModal:hover, #closeEndModal:hover, #openStartModal:hover {
+    text-shadow: 0px 0px 6px var(--light-color);
+    -webkit-box-shadow: 0px 5px 40px -10px var(--main-title);
+    -moz-box-shadow: 0px 5px 40px -10px var(--main-title);
+    transition: all 0.4s ease 0s;
+}
+
+.topAnswers {
+    text-align: left;
+    list-style-position: inside;
+    padding: 20px 30px;
+}
+
+#startRound p {
+    color: var(--main-color);
+    -webkit-text-stroke: 1px var(--dark-color);
+    font-size: 26px;
+}
+
+.currentTeam {
+    text-decoration: underline wavy var(--main-color);
+}
+
+#submit-button, #submit-answer-button {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--main-color);
+    background: var(--dark-color);
+    padding: 5px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    margin: 10px;
+    width: 150px;
+}
+
+#submit-answer-button {
+    padding: 3px;
+    width: 55px;
+}
+
+#submit-button:hover, #submit-answer-button:hover {
+    text-shadow: 0px 0px 6px var(--light-color);
+    -webkit-box-shadow: 0px 5px 40px -10px var(--main-title);
+    -moz-box-shadow: 0px 5px 40px -10px var(--main-title);
+    transition: all 0.4s ease 0s;
+}
+
+.topAnswers p {
+    text-decoration: underline wavy var(--main-title);
+}
+
+#help {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+    display: none;
+}
+
+#help-textbox {
+	background-color: var(--dark-color);
+	height: 600px;
+	width: 600px;
+    border-radius: 2px;
+    margin: 150px auto;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    color: var(--light-color);
+    text-align: left;
+    padding: 20px;
+}
+
+#openHelpModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16px;
+    color: var(--light-color);
+    background: var(--main-title);
+    padding: 5px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+#openHelpModal:hover {
+    transform: scale(1.3);
+    transition-timing-function: ease-in;
+    transition: 1.5s;
+}
+
+#endModal {
+	background-color: var(--bg-color);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+    display: none;
+    overflow: hidden;
+}
+
+#end-textbox {
+    background-image: url('../img/rainbow.jpg');
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	height: 700px;
+	width: 900px;
+    border-radius: 2px;
+    margin: 150px auto;
+    padding: 50px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    
+}
+
+.winningTeam {
+    padding: 50px;
+}
